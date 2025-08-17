@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Results</title>
+</head>
+<body>
+    <h2>Results</h2>
+    <p><strong>Sequence:</strong> <pre>{{ sequence }}</pre></p>
+    <p><strong>Molecular Weight:</strong> {{ weight }} Da</p>
+    <h3>Amino Acid Composition:</h3>
+    <ul>
+        {% for aa, count in aa_count.items() %}
+        <li>{{ aa }}: {{ count }}</li>
+        {% endfor %}
+    </ul>
+
+    {% if structure_data %}
+        <h3>Structure Data:</h3>
+        {% if structure_data.error %}
+            <p>{{ structure_data.error }}</p>
+        {% else %}
+            <p><strong>PDB ID:</strong> {{ structure_data['rcsb_id'] }}</p>
+            <p><strong>Title:</strong> {{ structure_data['struct']['title'] }}</p>
+        {% endif %}
+    {% endif %}
+</body>
+</html>

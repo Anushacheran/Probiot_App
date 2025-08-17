@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PROBIOT</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="form-container">
+        <h2>Enter Protein Sequence</h2>
+        <form method="POST" action="/predict">
+            <textarea name="sequence" rows="10" cols="60" placeholder="Type your protein sequence here..."></textarea><br>
+            <button type="submit">Predict</button>
+        </form>
+    </div>
+</body>
+</html>

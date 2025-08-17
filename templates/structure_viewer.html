@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Protein 3D Structure Viewer</title>
+  <!-- Use a stable version of the NGL library -->
+  <script src="https://cdn.jsdelivr.net/npm/ngl@2.0.0/dist/ngl.js"></script>
+  <style>
+    #viewport {
+      width: 100%;
+      height: 500px;
+      margin: auto;
+    }
+  </style>
+</head>
+<body>
+  <h1>Protein Structure Viewer</h1>
+  <div id="viewport" style="width: 600px; height: 400px;"></div>
+
+  <script>
+    window.onload = function() {
+      try {
+        var stage = new NGL.Stage("viewport");
+
+        // Replace with a valid PDB ID or local file if needed
+        stage.loadFile("rcsb://4hhb", { defaultRepresentation: true }).then(function() {
+          console.log("Structure loaded successfully");
+        }).catch(function(error) {
+          console.error("Error loading structure:", error);
+        });
+      } catch (error) {
+        console.error("An error occurred while initializing the viewer:", error);
+      }
+    };
+  </script>
+</body>
+</html>
