@@ -11,4 +11,4 @@
 ## Installation
 1. Clone the repository:  
    ```bash
-   git clone https://github.com/<your-username>/Probiot.git
+   git clone https://github.com/<Anushacheran>/Probiot.git
